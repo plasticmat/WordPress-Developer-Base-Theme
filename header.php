@@ -29,7 +29,7 @@
 		</hgroup>
 
 		<nav>
-			<?php wp_nav('main'); ?>
+			<?php wp_nav_menu('main'); ?>
 		</nav>
 
 	</header>
