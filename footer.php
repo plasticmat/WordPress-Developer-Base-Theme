@@ -3,7 +3,7 @@
 	<footer>
 		<p class="copy">
 		<?php
-			$default_copyright = '&copy; <a href="' . get_bloginfo('url') . '">' . get_bloginfo('name') . '</a> ' . date('Y');
+			$default_copyright = '&copy; <a href="' . home_url() . '">' . get_bloginfo('name') . '</a> ' . date('Y');
 			echo $default_copyright;
 		?>
 		</p>
