@@ -23,7 +23,7 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 	$meta_boxes[] = array(
 		'id'         => 'test_metabox',
 		'title'      => 'Test Metabox',
-		'pages'      => array( 'page', ), // Post type
+		'pages'      => array( 'page','post','basetheme-cpt' ), // Post type
 		'context'    => 'normal',
 		'priority'   => 'high',
 		'show_names' => true, // Show field names on the left
@@ -216,7 +216,8 @@ add_action( 'init', 'cmb_initialize_cmb_meta_boxes', 9999 );
  */
 function cmb_initialize_cmb_meta_boxes() {
 
-	if ( ! class_exists( 'cmb_Meta_Box' ) )
+	if ( ! class_exists( 'cmb_Meta_Box' ) ){
 		require_once 'init.php';
+	}
 
 }
