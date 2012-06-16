@@ -94,4 +94,16 @@ function basetheme_sidebars() {
 }
 add_action( 'widgets_init', 'basetheme_sidebars' );
 
+// Include custom admin options
+include_once(BASETHEME_LIB_INCLUDES . '/custom-admin.php');
+
+// Include custom post types
+include_once(BASETHEME_LIB_INCLUDES . '/custom-post-types.php');
+
+// Include custom taxonomies
+include_once(BASETHEME_LIB_INCLUDES . '/custom-taxonomies.php');
+
+// Include custom metaboxes
+include_once(BASETHEME_LIB_INCLUDES . '/metabox/example-functions.php');
+
 ?>
