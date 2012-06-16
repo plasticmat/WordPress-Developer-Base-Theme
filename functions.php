@@ -32,7 +32,7 @@ function basetheme_add_scripts(){
         
         // Register the stylesheets ...
         wp_register_style( 'bootstrap_css', BASETHEME_ASSETS . '/css/bootstrap.min.css', array(), '1', 'all' );
-        wp_register_style( 'basename_css', BASETHEME_ASSETS . '/css/theme.css', array(), '1', 'all' );
+        wp_register_style( 'basetheme_css', BASETHEME_ASSETS . '/css/theme.css', array(), '1', 'all' );
 
         // ... and enqueue them
         wp_enqueue_style( 'bootstrap_css' );

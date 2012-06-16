@@ -16,16 +16,15 @@
 			<?php the_content(); ?>
 		</div>
 		
-		<?php wp_link_pages(); ?>
-		
 	</article>
 
 <?php endwhile; ?>
 
 	<nav class="wp-prev-next clearfix">
+		<span class="pages"><?php wp_link_pages(); ?></span>
 		<span class="prev-link pull-right"><?php next_posts_link(); ?></span>
 		<span class="next-link pull-left"><?php previous_posts_link(); ?></span>
-	</nav>
+	</nav>	
 
 	<section class="comments">
 		<?php comments_template(); ?>
