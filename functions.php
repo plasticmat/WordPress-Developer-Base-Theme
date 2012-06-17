@@ -78,6 +78,12 @@ function basetheme_init(){
     // Enable editor styles
     add_editor_style();
 
+    // Initialise the theme options framework
+    if ( !function_exists( 'optionsframework_init' ) ) {
+        define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/includes/options/inc/' );
+        require_once dirname( __FILE__ ) . '/includes/options/inc/options-framework.php';
+    }
+
 }
 add_action( 'after_setup_theme', 'basetheme_init' );
 
