@@ -1,6 +1,5 @@
 <?php
 
-// Just sticking this here to keep the Theme Check happy.. not sure of it's purpose yet
 if ( ! isset( $content_width ) ) $content_width = 980;
 
 // Constants for absolute and relative paths to theme directoy
@@ -17,7 +16,7 @@ function basetheme_add_scripts(){
         
     if ( !is_admin() ) {
         
-        // Register the new scipts ...
+        // Register scripts (add and remove as needed)
         wp_register_script( 'modernizr', BASETHEME_ASSETS .'/js/libs/modernizr.js',array(),false,false );
         wp_register_script( 'selectivizr', BASETHEME_ASSETS .'/js/libs/selectivizr-min.js',array('jquery'),false,true );
         wp_register_script( 'basetheme_plugins', BASETHEME_ASSETS .'/js/plugins.js',array('jquery'),false,true );
@@ -30,7 +29,7 @@ function basetheme_add_scripts(){
         wp_enqueue_script( 'basetheme_scripts' );
         wp_enqueue_script( 'comment-reply' );
         
-        // Register the stylesheets ...
+        // Register stylesheets (add and remove as needed)
         wp_register_style( 'bootstrap_css', BASETHEME_ASSETS . '/css/bootstrap.min.css', array(), '1', 'all' );
         wp_register_style( 'basetheme_css', BASETHEME_ASSETS . '/css/theme.css', array(), '1', 'all' );
 
@@ -38,13 +37,6 @@ function basetheme_add_scripts(){
         wp_enqueue_style( 'bootstrap_css' );
         wp_enqueue_style( 'basetheme_css' );
         
-    }
-    else {
-        
-        // Register & enqueue the admin stylesheet
-        wp_register_style( 'basetheme_admin_css', BASETHEME_ASSETS . '/css/admin.css', array(), '1', 'all' );
-        wp_enqueue_style( 'basetheme_admin_css' );
-    
     }
         
 }
@@ -64,8 +56,8 @@ function basetheme_init(){
     add_theme_support( 'automatic-feed-links' );
 
     // Custom background and header (uncomment if needed)
-    add_theme_support( 'custom-background' );
-    add_theme_support( 'custom-header' );
+    // add_theme_support( 'custom-background' );
+    // add_theme_support( 'custom-header' );
 
     // Register menus
     register_nav_menus(
@@ -101,12 +93,12 @@ function basetheme_sidebars() {
 add_action( 'widgets_init', 'basetheme_sidebars' );
 
 // Include admin modifications, CPTs, custom taxonomies and custom metaboxes
-include_once(BASETHEME_INCLUDES . '/basetheme-admin.php');
-include_once(BASETHEME_INCLUDES . '/basetheme-post-types.php');
-include_once(BASETHEME_INCLUDES . '/basetheme-taxonomies.php');
-include_once(BASETHEME_INCLUDES . '/basetheme-metaboxes.php');
+include_once(BASETHEME_INCLUDES . '/admin.php');
+include_once(BASETHEME_INCLUDES . '/post-types.php');
+include_once(BASETHEME_INCLUDES . '/taxonomies.php');
+include_once(BASETHEME_INCLUDES . '/metaboxes.php');
 
 // Include custom widgets
-include_once(BASETHEME_WIDGETS . '/basetheme-example-widget.php');
+include_once(BASETHEME_WIDGETS . '/example-widget.php');
 
 ?>

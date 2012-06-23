@@ -72,8 +72,8 @@ function optionsframework_init() {
 	if ( $optionsfile = locate_template( array('options.php') ) ) {
 		require_once($optionsfile);
 	}
-	else if (file_exists( BASETHEME_INCLUDES  . '/basetheme-options.php' ) ) {
-		require_once BASETHEME_INCLUDES  . '/basetheme-options.php' ;
+	else if (file_exists( BASETHEME_INCLUDES  . '/options.php' ) ) {
+		require_once BASETHEME_INCLUDES  . '/options.php' ;
 	}
 	
 	$optionsframework_settings = get_option('optionsframework' );
